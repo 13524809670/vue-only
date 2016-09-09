@@ -65,7 +65,7 @@ export default {
 
 .wrap{
   width: 999px;
-  height: 800px;
+  height: 840px;
   margin:0 auto;
 }
 

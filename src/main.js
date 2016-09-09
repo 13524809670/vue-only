@@ -1,6 +1,3 @@
-
-
-//创建路由
 var Vue = require('vue')
 var VueRouter = require('vue-router')
 var Hello = require('./components/Hello.vue')
@@ -10,8 +7,6 @@ var Three = require('./components/Three.vue')
 
 Vue.use(VueRouter)
 
-
-//新路由连接地址
 var Foo = Vue.extend({
 	template: '<p>这是一个连接！</p>'
 })
@@ -22,10 +17,8 @@ var Bar = Vue.extend({
 
 
 var App = Vue.extend({})
-
-//创建新的路由包
 var router = new VueRouter()
-//在新路由包引用
+
 router.map({
 	'/foo': {
 		component: Foo
