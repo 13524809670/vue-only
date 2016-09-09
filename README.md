@@ -2,7 +2,7 @@
 
 > A Vue.js project 123
 > 
-> 这是dev分支
+> 这是新建 dev 分支用于练习
 
 ## Build Setup
 
