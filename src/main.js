@@ -1,9 +1,12 @@
-var Vue = require('vue')
-var VueRouter = require('vue-router')
-var Hello = require('./components/Hello.vue')
-var One = require('./components/One.vue')
-var Two = require('./components/Two.vue')
-var Three = require('./components/Three.vue')
+var Vue = require('vue');
+var VueRouter = require('vue-router');
+var Hello = require('./components/Hello.vue');
+var One = require('./components/One.vue');
+var Two = require('./components/Two.vue');
+var Three = require('./components/Three.vue');
+var AppIndex = require('./App.vue');
+
+
 
 Vue.use(VueRouter)
 
@@ -11,20 +14,17 @@ var Foo = Vue.extend({
 	template: '<p>这是一个连接！</p>'
 })
 
-var Bar = Vue.extend({
-	template: '<p>This is 链接</p>'
-})
-
 
 var App = Vue.extend({})
 var router = new VueRouter()
+
 
 router.map({
 	'/foo': {
 		component: Foo
 	},
 	'/': {
-		component: Bar
+		component: AppIndex
 	},
 	'/hello': {
         component: Hello

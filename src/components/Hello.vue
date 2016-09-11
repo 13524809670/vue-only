@@ -1,14 +1,13 @@
 <template>
   <div class="hello">
-    <div class="wrap">
-      <img src="../assets/39.png" alt="" class="pic">
-      <h1>{{ msg }}</h1>
-      <ul>
-        <h2>王锐</h2>
-        <li v-for="todo in todoa">{{ todo.text }}</li>
-      </ul>
-      <a v-link="{ path: '/one' }">Next</a>
-    </div>
+    <img src="../assets/aa_03.png" alt="" class="pic">
+    <h1>{{ msg }}</h1>
+    <!--<ul v-if="show" transition="expand" class="expand-transition expand-enter expand-leave">  -->
+    <ul class="hello-b">
+      <h2>王锐</h2>
+      <li v-for="todo in todoa">{{ todo.text }}</li>
+    </ul>
+    <a v-link="{ path: '/one' }" class="hello-a">Next</a>
   </div>
 </template>
 
@@ -16,10 +15,6 @@
 export default {
   data () {
     return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
       msg: '个人介绍',
       todoa: [
         { text: '性别：男' },
@@ -34,63 +29,102 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-*{
-  margin: 0;
-  padding: 0;
-}
 .hello{
-      
-      background-image: url(../assets/16.png);
-      width: 100%;
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      padding-top: 180px;
-}
-
-.wrap{
-  width: 1150px;
-  height: 800px;
-  margin:0 auto;
-}
-
-.pic{
-  display: inline-block;
-  float: left;
-  height: 600px;
-  width: 500px;
-  margin-right: 50px;
+  width: 1070px;
+  height: 680px;
+  background-image: url(../assets/12_09.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
 }
 
 h1{
-  width: 60px;
-  height: 350px;
-  font-size: 45px;
-  text-align: center;
+  width: 47px;
   line-height: 90px;
   float: left;
-  margin-top: 160px;
-  margin-right: 50px;
-  color: red;
+  margin: 120px 50px 20px 0;
 }
 
 h2{
   font-size: 40px;
+  color: #fff;
+  margin-bottom: 10px;
 }
+
+.hello ul h2 {
+  transform: translate(650px,0px);
+  transition: all 0.1s;
+  opacity: 0;
+}
+/*动画执行时的样式*/
+.hello:hover ul h2{
+  transform: translate(0px,0px);
+  opacity: 1;
+}
+
 
 ul{
-  list-style: none;
-  margin-top: 180px;
+  margin: 160px 0 90px 0;
   display: inline-block;
 }
-li{
-  font-size: 33px;
+/*照片动画*/
+.pic{
+  display: block;
+  float: left;
+  height: 680px;
+  width: 500px;
+  margin-right: 50px;
+  animation: pic 3s ease-in-out backwards;
+}
+@keyframes pic{
+  0% { 
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-a{
-  font-size: 30px;
-  font-style: italic;
-  display: block;
+/*个人介绍动画开始样式*/
+.hello ul li {
+  transform: translate(650px,0px);
+  transition: all 0.5s;
+  opacity: 0;
 }
+/*动画执行时的样式*/
+.hello:hover ul li{
+  transform: translate(0px,0px);
+  opacity: 1;
+}
+/*动画依次延时*/
+.hello ul li:nth-of-type(1) {
+  transition-delay: 0.05s;
+}
+.hello ul li:nth-of-type(2) {
+  transition-delay: 0.1s;
+}
+.hello ul li:nth-of-type(3) {
+  transition-delay: 0.15s;
+}
+.hello ul li:nth-of-type(4) {
+  transition-delay: 0.2s;
+}
+.hello ul li:nth-of-type(5) {
+  transition-delay: 0.25s;
+}
+.hello ul li:nth-of-type(6) {
+  transition-delay: 0.25s;
+}
+.hello ul li:nth-of-type(7) {
+  transition-delay: 0.25s;
+}
+
+.hello-a {
+  display: inline-block;
+  width: 90px;
+}
+
 </style>
