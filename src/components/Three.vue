@@ -9,7 +9,7 @@
         {{ todo.text }}
       </li>
     </ul>
-    <a v-link="{ path: '/hello' }" class="three-a">Next</a>
+    <a v-link="{ path: '/' }" class="three-a">Next</a>
   </div>
 </template>
 
